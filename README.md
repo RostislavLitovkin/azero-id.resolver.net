@@ -18,7 +18,7 @@ dotnet add package AzeroIdResolver
 
 # Motivation
 
-This tool simplifies the use of AZERO.ID in c# based applications. Without this tool, developers would have to learn how to ink! smart contracts work, how to query the state within the contract described [here](https://use.ink/datastructures/storage-in-metadata#accessing-storage-items-with-the-childstate-rpc-call-api). This is very time consuming and it takes douzens of hours to fully implement.
+This tool simplifies the use of AZERO.ID in c# based applications. Without this tool, developers would have to learn how ink! smart contracts work and how to query the state within the contract, which is described [here](https://use.ink/datastructures/storage-in-metadata#accessing-storage-items-with-the-childstate-rpc-call-api). It is very time consuming and it takes douzens of hours to fully implement.
 
 Thanks to this Nuget package, it can be implemented and used in literally minutes.
 
