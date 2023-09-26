@@ -3,7 +3,7 @@ using static Substrate.NetApi.Utils;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Extrinsics;
 
-namespace Resolver
+namespace AzeroIdResolver
 {
     public class AzeroId
     {

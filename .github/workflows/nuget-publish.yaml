@@ -37,5 +37,5 @@ jobs:
     - name: Publish Nuget
       uses: brandedoutcast/publish-nuget@v2.5.2  
       with:
-       PROJECT_FILE_PATH: ./Resolver/Resolver.csproj
+       PROJECT_FILE_PATH: ./AzeroIdResolver/AzeroIdResolver.csproj
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 

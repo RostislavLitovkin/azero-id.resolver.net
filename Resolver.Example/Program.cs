@@ -1,6 +1,6 @@
 ﻿using Substrate.NetApi;
 using Substrate.NetApi.Model.Extrinsics;
-using Resolver;
+using AzeroIdResolver;
 
 // Connect to the client
 // - This is optional, but recommended for better performance

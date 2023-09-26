@@ -1,4 +1,4 @@
-﻿namespace Resolver
+﻿namespace AzeroIdResolver
 {
     public class Constants
     {

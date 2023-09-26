@@ -2,7 +2,7 @@
 using Substrate.NetApi.Model.Types.Base;
 using Substrate.NetApi.Model.Types.Metadata.V14;
 
-namespace Resolver
+namespace AzeroIdResolver
 {
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AccountId32 : BaseType

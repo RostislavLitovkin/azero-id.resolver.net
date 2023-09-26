@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Resolver\Resolver.csproj" />
+    <ProjectReference Include="..\AzeroIdResolver\AzeroIdResolver.csproj" />
   </ItemGroup>
 </Project>

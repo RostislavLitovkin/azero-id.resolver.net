@@ -1,6 +1,6 @@
 ﻿using Substrate.NetApi;
 
-namespace Resolver
+namespace AzeroIdResolver
 {
     public class Helpers
     {
