@@ -63,3 +63,10 @@ Polkadot C# community is growing thanks to Ajuna Network and their [Substrate.Ne
 - Polkadot Global Series 2023 (Europe) - second place with [PlutoWallet](https://github.com/RostislavLitovkin/PlutoWallet)
 - Polkadot Global Series 2023 (APEC) - second place with [Uniquery.Net](https://github.com/RostislavLitovkin/Uniquery.Net)
 - Audience choice prize at EthPrague 2023 with [HackerPackerDao](https://github.com/RostislavLitovkin/HackerPackerDao)
+
+Thanks to my experience with other packages, like Uniquery.Net, I think I will be perfect fit for this project.
+
+# Techstack used
+
+- C# programming language
+- [Substrate.NetApi](https://github.com/SubstrateGaming/Substrate.NET.API)
