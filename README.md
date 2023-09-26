@@ -16,6 +16,21 @@ dotnet add package AzeroIdResolver
 - [x] Aleph Zero Testnet
 - [ ] Aleph Zero Mainnet
 
+# Methods
+
+- [x] GetPrimaryNameForAddress
+- [x] GetNamesForAddress
+- [x] GetTld
+- [ ] GetAddressForPrimaryName
+- [ ] GetReservedPeriodForPrimaryName
+- [ ] ReserveName
+- [ ] ReserveNameAndSetAsPrimary
+- [ ] TransferName
+- [ ] GetControlledNamesForAddress
+- [ ] GetControllerAddressForName
+- [ ] GetRecordForName
+- [ ] SetRecordForName
+
 # Motivation
 
 This tool simplifies the use of AZERO.ID in c# based applications. Without this tool, developers would have to learn how ink! smart contracts work and how to query the state within the contract, which is described [here](https://use.ink/datastructures/storage-in-metadata#accessing-storage-items-with-the-childstate-rpc-call-api). It is very time consuming and it takes douzens of hours to fully implement.
@@ -31,4 +46,5 @@ Console.WriteLine(await AzeroId.GetPrimaryNameForAddress("5EU6EyEq6RhqYed1gCYyQR
 // returns: "rosta"
 ```
 
+Polkadot C# community is growing thanks to Ajuna Network and their [Substrate.NetApi](https://github.com/SubstrateGaming/Substrate.NET.API). C# is mostly popular for it's games, thanks to the popular game engines like Unity, Godot and CryEngine.
 
