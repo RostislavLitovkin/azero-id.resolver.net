@@ -31,6 +31,9 @@ dotnet add package AzeroIdResolver
 - [ ] GetRecordForName
 - [ ] SetRecordForName
 
+All of these methods are also well in-line documented:
+<img width="974" alt="Screenshot 2023-09-26 at 16 44 47" src="https://github.com/RostislavLitovkin/azero-id.resolver.net/assets/77352013/83189d9e-989d-4b78-bf38-5ad0bfa30c66">
+
 # Motivation
 
 This tool simplifies the use of AZERO.ID in c# based applications. Without this tool, developers would have to learn how ink! smart contracts work and how to query the state within the contract, which is described [here](https://use.ink/datastructures/storage-in-metadata#accessing-storage-items-with-the-childstate-rpc-call-api). It is very time consuming and it takes douzens of hours to fully implement.
