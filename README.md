@@ -3,3 +3,10 @@
 A resolver for [AZERO.ID](https://azero.id/) for C# language.
 
 This is a programming tool meant for developers. It significantly simplifies the integration of AZERO.ID into a c# based projects.
+
+# Installation
+
+Nuget package: https://www.nuget.org/packages/AzeroIdResolver/
+```
+dotnet add package AzeroIdResolver
+```
