@@ -48,3 +48,15 @@ Console.WriteLine(await AzeroId.GetPrimaryNameForAddress("5EU6EyEq6RhqYed1gCYyQR
 
 Polkadot C# community is growing thanks to Ajuna Network and their [Substrate.NetApi](https://github.com/SubstrateGaming/Substrate.NET.API). C# is mostly popular for it's games, thanks to the popular game engines like Unity, Godot and CryEngine.
 
+# Team
+
+#### [Rostislav Litovkin](http://rostislavlitovkin.pythonanywhere.com/aboutme)
+- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley
+- Experienced .net MAUI developer, e.g.:
+   - [Galaxy Logic Game](https://github.com/RostislavLitovkin/galaxylogicgamemaui) (successful game for watches and mobiles, 50k+ downloads)
+- Frontend developer at [Calamar explorer](https://calamar.app/)
+- Successful student at Polkadot DevCamp #2
+- Successful student at [Solana Summer School](https://ackeeblockchain.com/school-of-solana)
+- Polkadot Global Series 2023 (Europe) - second place with https://github.com/RostislavLitovkin/PlutoWallet
+- Polkadot Global Series 2023 (APEC) - second place with https://github.com/RostislavLitovkin/Uniquery.Net
+- Audience choice prize at EthPrague 2023 with https://github.com/RostislavLitovkin/HackerPackerDao
