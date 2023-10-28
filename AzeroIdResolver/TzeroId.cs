@@ -1,27 +1,23 @@
-﻿using Newtonsoft.Json.Linq;
-using static Substrate.NetApi.Utils;
-using Substrate.NetApi;
-using Substrate.NetApi.Model.Extrinsics;
+﻿using System;
+using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
-using GraphQL;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Net;
+using Newtonsoft.Json.Linq;
+using static Substrate.NetApi.Utils;
+using Substrate.NetApi;
 using Substrate.NetApi.Model.Types.Primitive;
-using System.Security.Cryptography;
 
 namespace AzeroIdResolver
 {
-    public class AzeroId
-    {
-        private static string tld = Constants.AzeroTld;
+	public class TzeroId
+	{
+        private static string tld = Constants.TzeroTld;
 
-        private static string prefixedStorageKey = Constants.AzeroPrefixedStorageKey;
+        private static string prefixedStorageKey = Constants.TzeroPrefixedStorageKey;
 
-        private static string wssUrl = Constants.AzeroWssUrl;
+        private static string wssUrl = Constants.TzeroWssUrl;
 
-        private static string graphUrl = Constants.AzeroGraphUrl;
+        private static string graphUrl = Constants.TzeroGraphUrl;
 
         /// <summary>
         /// Gets a Primary name for the given address
