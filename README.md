@@ -21,8 +21,8 @@ dotnet add package AzeroIdResolver
 - [x] GetPrimaryNameForAddress
 - [x] GetNamesForAddress
 - [x] GetTld
-- [ ] GetAddressForPrimaryName
-- [ ] GetReservedPeriodForPrimaryName
+- [x] GetAddressForName
+- [x] GetRegistrationPeriodForName
 - [ ] ReserveName
 - [ ] ReserveNameAndSetAsPrimary
 - [ ] TransferName

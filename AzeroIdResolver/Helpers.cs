@@ -1,4 +1,5 @@
 ﻿using Substrate.NetApi;
+using Substrate.NetApi.Model.Extrinsics;
 
 namespace AzeroIdResolver
 {
@@ -19,6 +20,25 @@ namespace AzeroIdResolver
 
             index += tldLength;
             return System.Text.Encoding.UTF8.GetString(tldBytes);
+        }
+
+        public static string RemoveTld(string name)
+        {
+            return name.Split(".")[0];
+        }
+
+        public static string AddTld(string name, string tld)
+        {
+            return name.Contains(".") ? name : name + tld;
+        }
+
+        public static async Task<SubstrateClient> GetSubstrateClient(string wssUrl)
+        {
+            SubstrateClient client = new SubstrateClient(new Uri(wssUrl), ChargeAssetTxPayment.Default());
+
+            await client.ConnectAsync();
+
+            return client;
         }
     }
 }
