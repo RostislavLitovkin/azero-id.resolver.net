@@ -14,7 +14,7 @@ dotnet add package AzeroIdResolver
 # Supported Networks
 
 - [x] Aleph Zero Testnet
-- [ ] Aleph Zero Mainnet
+- [x] Aleph Zero Mainnet
 
 # Methods
 
