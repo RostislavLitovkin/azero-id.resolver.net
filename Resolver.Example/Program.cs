@@ -4,7 +4,6 @@ using AzeroIdResolver;
 
 // Connect to the client
 // - This is optional, but recommended for better performance
-
 SubstrateClient client = new SubstrateClient(new Uri("wss://ws.test.azero.dev"), ChargeAssetTxPayment.Default());
 await client.ConnectAsync();
 
@@ -26,10 +25,10 @@ Console.WriteLine(await TzeroId.GetAddressAndRegisteredAtForName("bitcoin.tzero"
 Console.WriteLine(await TzeroId.GetAddressForName("bullshithaha.tzero"));
 // returns: null
 
-Console.WriteLine(await TzeroId.GetRegistrationPeriodForName("rosta"));
+Console.WriteLine(await TzeroId.GetRegistrationPeriodForName(client, "rosta"));
 // returns: (9/26/2023 11:31:47 AM, 9/25/2026 11:31:47 AM)
 
-Console.WriteLine(await TzeroId.GetRegistrationPeriodForName("bitcoin.tzero"));
+Console.WriteLine(await TzeroId.GetRegistrationPeriodForName(client, "bitcoin.tzero"));
 // returns: (7/27/2023 8:03:41 PM, 7/26/2025 8:03:41 PM)
 
 Console.WriteLine(await AzeroId.GetAddressForName("bitcoin.azero"));
