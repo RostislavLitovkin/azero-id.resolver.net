@@ -116,6 +116,10 @@ Polkadot C# community is growing thanks to Ajuna Network and their [Substrate.Ne
 
 Thanks to my experience with other packages, like Uniquery.Net, I think I will be perfect fit for this project.
 
+# Projects utilising azero-id.resolver.net
+
+- https://github.com/RostislavLitovkin/PlutoWallet/tree/AlephZeroId
+
 # Techstack used
 
 - C# programming language
