@@ -1,3 +1,10 @@
+# ink! hackathon by Encode
+
+Everything in this repo has been done until the 29.10.2023 23:59 (deadline) for the ink! hackathon.
+A few parts of the project have been done before the start of the hackathon.
+
+Youtube demo: https://www.youtube.com/watch?v=YOWEs3ZIZgw
+
 # azero-id.resolver.net
 
 A resolver for [AZERO.ID](https://azero.id/) for C# language.
