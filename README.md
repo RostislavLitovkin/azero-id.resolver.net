@@ -1,6 +1,7 @@
 # ink! hackathon by Encode
 
 Everything in this repo has been done until the 29.10.2023 23:59 (deadline) for the ink! hackathon.
+
 A few parts of the project have been done before the start of the hackathon.
 
 - 3 min YouTube demo: https://www.youtube.com/watch?v=YOWEs3ZIZgw
