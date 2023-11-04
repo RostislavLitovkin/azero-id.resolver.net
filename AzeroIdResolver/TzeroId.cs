@@ -24,11 +24,11 @@ namespace AzeroIdResolver
         /// </summary>
         /// <param name="address"></param>
         /// <returns>Primary name</returns>
-        public static async Task<string> GetPrimaryNameForAddress(string address)
+        public static async Task<string> GetPrimaryNameForAddress(string address, CancellationToken cancellationToken = default(CancellationToken))
         {
-            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl);
+            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl, cancellationToken);
 
-            return await GetPrimaryNameForAddress(client, address);
+            return await GetPrimaryNameForAddress(client, address, cancellationToken);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace AzeroIdResolver
         /// </summary>
         /// <param name="address"></param>
         /// <returns>Primary name</returns>
-        public static async Task<string> GetPrimaryNameForAddress(SubstrateClient client, string address)
+        public static async Task<string> GetPrimaryNameForAddress(SubstrateClient client, string address, CancellationToken cancellationToken = default(CancellationToken))
         {
             string rootKey = "0x8f010000";
 
@@ -56,7 +56,7 @@ namespace AzeroIdResolver
             var temp = await client.InvokeAsync<string>("childstate_getStorage", new object[2] {
                 prefixedStorageKey,
                 Utils.Bytes2HexString(finalHash)
-            }, CancellationToken.None);
+            }, cancellationToken);
             if (temp == null) return null;
 
             var result = Utils.HexToByteArray(temp);
@@ -70,11 +70,11 @@ namespace AzeroIdResolver
         /// </summary>
         /// <param name="address"></param>
         /// <returns>List of all registered names</returns>
-        public static async Task<List<string>> GetNamesForAddress(string address)
+        public static async Task<List<string>> GetNamesForAddress(string address, CancellationToken cancellationToken = default(CancellationToken))
         {
-            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl);
+            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl, cancellationToken);
 
-            return await GetNamesForAddress(client, address);
+            return await GetNamesForAddress(client, address, cancellationToken);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace AzeroIdResolver
         /// </summary>
         /// <param name="address"></param>
         /// <returns>List of all registered names</returns>
-        public static async Task<List<string>> GetNamesForAddress(SubstrateClient client, string address)
+        public static async Task<List<string>> GetNamesForAddress(SubstrateClient client, string address, CancellationToken cancellationToken = default(CancellationToken))
         {
             string rootKey = "0x2d010000";
 
@@ -101,7 +101,7 @@ namespace AzeroIdResolver
             var keysPaged = await client.InvokeAsync<JArray>("childstate_getKeys", new object[2] {
                 prefixedStorageKey,
                 "0x"
-            }, CancellationToken.None);
+            }, cancellationToken);
 
             var unfilteredKeys = keysPaged.Select(p => p.ToString());
 
@@ -115,7 +115,7 @@ namespace AzeroIdResolver
                     var temp = await client.InvokeAsync<string>("childstate_getStorage", new object[2] {
                         prefixedStorageKey,
                         key
-                    }, CancellationToken.None);
+                    }, cancellationToken);
 
                     if (temp == null) return null;
 
@@ -133,18 +133,18 @@ namespace AzeroIdResolver
         /// Gets the TLD
         /// </summary>
         /// <returns>TLD</returns>
-        public static async Task<string> GetTld()
+        public static async Task<string> GetTld(CancellationToken cancellationToken = default(CancellationToken))
         {
-            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl);
+            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl, cancellationToken);
 
-            return await GetTld(client);
+            return await GetTld(client, cancellationToken);
         }
 
         /// <summary>
         /// Gets the TLD
         /// </summary>
         /// <returns>TLD</returns>
-        public static async Task<string> GetTld(SubstrateClient client)
+        public static async Task<string> GetTld(SubstrateClient client, CancellationToken cancellationToken = default(CancellationToken))
         {
             string rootKey = "0x00000000";
 
@@ -155,7 +155,7 @@ namespace AzeroIdResolver
             var result = Utils.HexToByteArray(await client.InvokeAsync<string>("childstate_getStorage", new object[2] {
                 prefixedStorageKey,
                 Utils.Bytes2HexString(finalHash)
-            }, CancellationToken.None));
+            }, cancellationToken));
 
             // 2 - 0x (start)
             // 64 - accountId32 (admin)
@@ -174,13 +174,13 @@ namespace AzeroIdResolver
         /// </summary>
         /// <param name="name">registered AZERO.ID name</param>
         /// <returns>Address</returns>
-        public static async Task<string?> GetAddressForName(string name)
+        public static async Task<string?> GetAddressForName(string name, CancellationToken cancellationToken = default(CancellationToken))
         {
             GraphQLHttpClient client = new GraphQLHttpClient(
                 graphUrl, new NewtonsoftJsonSerializer()
             );
 
-            return await GetAddressForName(client, name);
+            return await GetAddressForName(client, name, cancellationToken);
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace AzeroIdResolver
         /// <param name="client">GraphQLHttpClient</param>
         /// <param name="name">registered AZERO.ID name</param>
         /// <returns>Address</returns>
-        public static async Task<string?> GetAddressForName(GraphQLHttpClient client, string name)
+        public static async Task<string?> GetAddressForName(GraphQLHttpClient client, string name, CancellationToken cancellationToken = default(CancellationToken))
         {
             GraphQLRequest request = new GraphQLRequest
             {
@@ -208,7 +208,7 @@ namespace AzeroIdResolver
                 },
             };
 
-            var graphQLResponse = await client.SendQueryAsync<DomainResponseType>(request);
+            var graphQLResponse = await client.SendQueryAsync<DomainResponseType>(request, cancellationToken);
 
             if (graphQLResponse.Errors != null && graphQLResponse.Errors.Length > 0)
             {
@@ -231,13 +231,13 @@ namespace AzeroIdResolver
         /// </summary>
         /// <param name="name">registered AZERO.ID name</param>
         /// <returns>Address and CreatedAt time</returns>
-        public static async Task<(string, string)?> GetAddressAndRegisteredAtForName(string name)
+        public static async Task<(string, string)?> GetAddressAndRegisteredAtForName(string name, CancellationToken cancellationToken = default(CancellationToken))
         {
             GraphQLHttpClient client = new GraphQLHttpClient(
                 graphUrl, new NewtonsoftJsonSerializer()
             );
 
-            return await GetAddressAndRegisteredAtForName(client, name);
+            return await GetAddressAndRegisteredAtForName(client, name, cancellationToken);
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace AzeroIdResolver
         /// <param name="client">GraphQLHttpClient</param>
         /// <param name="name">registered AZERO.ID name</param>
         /// <returns>Address and CreatedAt time</returns>
-        public static async Task<(string, string)?> GetAddressAndRegisteredAtForName(GraphQLHttpClient client, string name)
+        public static async Task<(string, string)?> GetAddressAndRegisteredAtForName(GraphQLHttpClient client, string name, CancellationToken cancellationToken = default(CancellationToken))
         {
             GraphQLRequest request = new GraphQLRequest
             {
@@ -266,7 +266,7 @@ namespace AzeroIdResolver
                 },
             };
 
-            var graphQLResponse = await client.SendQueryAsync<DomainResponseType>(request);
+            var graphQLResponse = await client.SendQueryAsync<DomainResponseType>(request, cancellationToken);
 
             if (graphQLResponse.Errors != null && graphQLResponse.Errors.Length > 0)
             {
@@ -284,14 +284,14 @@ namespace AzeroIdResolver
             return (graphQLResponse.Data.Domains[0].Owner.Id, graphQLResponse.Data.Domains[0].RegisteredAt);
         }
 
-        public static async Task<(DateTime, DateTime)?> GetRegistrationPeriodForName(string name)
+        public static async Task<(DateTime, DateTime)?> GetRegistrationPeriodForName(string name, CancellationToken cancellationToken = default(CancellationToken))
         {
-            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl);
+            SubstrateClient client = await Helpers.GetSubstrateClient(wssUrl, cancellationToken);
 
-            return await GetRegistrationPeriodForName(client, name);
+            return await GetRegistrationPeriodForName(client, name, cancellationToken);
         }
 
-        public static async Task<(DateTime, DateTime)?> GetRegistrationPeriodForName(SubstrateClient client, string name)
+        public static async Task<(DateTime, DateTime)?> GetRegistrationPeriodForName(SubstrateClient client, string name, CancellationToken cancellationToken = default(CancellationToken))
         {
             string rootKey = "0xca000000";
 
@@ -310,7 +310,7 @@ namespace AzeroIdResolver
             var temp = await client.InvokeAsync<string>("childstate_getStorage", new object[2] {
                 prefixedStorageKey,
                 Utils.Bytes2HexString(finalHash)
-            }, CancellationToken.None);
+            }, cancellationToken);
             if (temp == null) return null;
 
             var byteResult = Utils.HexToByteArray(temp);

@@ -32,11 +32,11 @@ namespace AzeroIdResolver
             return name.Contains(".") ? name : name + tld;
         }
 
-        public static async Task<SubstrateClient> GetSubstrateClient(string wssUrl)
+        public static async Task<SubstrateClient> GetSubstrateClient(string wssUrl, CancellationToken cancellationToken = default(CancellationToken))
         {
             SubstrateClient client = new SubstrateClient(new Uri(wssUrl), ChargeAssetTxPayment.Default());
 
-            await client.ConnectAsync();
+            await client.ConnectAsync(cancellationToken);
 
             return client;
         }
