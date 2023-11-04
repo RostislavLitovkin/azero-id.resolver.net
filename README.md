@@ -1,3 +1,11 @@
+# ink! hackathon by Encode
+
+Everything in this repo has been done until the 29.10.2023 23:59 (deadline) for the ink! hackathon.
+
+A few parts of the project have been done before the start of the hackathon.
+
+- 3 min YouTube demo: https://www.youtube.com/watch?v=YOWEs3ZIZgw
+
 # azero-id.resolver.net
 
 A resolver for [AZERO.ID](https://azero.id/) for C# language.
@@ -93,6 +101,14 @@ Console.ReadKey(); // This is so that the console stays open.
 
 Polkadot C# community is growing thanks to Ajuna Network and their [Substrate.NetApi](https://github.com/SubstrateGaming/Substrate.NET.API). C# is mostly popular for it's games, thanks to the popular game engines like Unity, Godot and CryEngine.
 
+# Example usages
+
+<img width="401" alt="Screenshot 2023-10-29 at 23 57 15" src="https://github.com/RostislavLitovkin/azero-id.resolver.net/assets/77352013/375048ea-16b8-4b99-a859-36d046ca4a44">
+
+<img width="401" alt="Screenshot 2023-10-29 at 23 57 35" src="https://github.com/RostislavLitovkin/azero-id.resolver.net/assets/77352013/932b4d73-ea70-4db4-a7bf-ec998333b2b5">
+
+![image](https://github.com/RostislavLitovkin/azero-id.resolver.net/assets/77352013/53a38247-1577-4761-8981-68ffe8ef5b6d)
+
 # Team
 
 #### [Rostislav Litovkin](http://rostislavlitovkin.pythonanywhere.com/aboutme)
@@ -107,6 +123,10 @@ Polkadot C# community is growing thanks to Ajuna Network and their [Substrate.Ne
 - Audience choice prize at EthPrague 2023 with [HackerPackerDao](https://github.com/RostislavLitovkin/HackerPackerDao)
 
 Thanks to my experience with other packages, like Uniquery.Net, I think I will be perfect fit for this project.
+
+# Projects utilising azero-id.resolver.net
+
+- https://github.com/RostislavLitovkin/PlutoWallet/tree/AlephZeroId
 
 # Techstack used
 
